@@ -1,0 +1,1 @@
+package com.hzr.demo.service;import com.hzr.demo.entity.FileEntity;import java.util.List;/** * @Classname FileService * @Author: hzr * @Description TODO * @Version 1.0.0 * @Date 2023/12/7 10:33 * @Created by 22906 */public interface FileService {    FileEntity findById(String id);    List<FileEntity> findAll();    FileEntity save(FileEntity file);}
