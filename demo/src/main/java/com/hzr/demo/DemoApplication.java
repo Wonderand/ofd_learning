@@ -17,6 +17,8 @@ public class DemoApplication {
 		for (String name : names) {
 			System.out.println(name);
 		}
+		Object pig = run.getBean("baseConfig");
+		System.out.println(pig);
 	}
 
 }
