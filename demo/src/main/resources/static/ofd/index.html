@@ -119,8 +119,12 @@
             </div>
         </header>
         <main class="el-main" id="main" style="height: auto; background: rgb(242, 242, 242); padding: 0px;">
-            <div id="leftMenu" class="left-section">
-                <div id="leftSign" style="margin-top: 100px;">测试</div>
+            <div id="leftMenu" style="display: none" class="left-section">
+                <div id="leftSign" style="margin-top: 100px;">
+                    选择签章的页码
+                    <input type="number" id="pageSign">
+                    <button id="btnSumb" onclick="sub()">签章</button>
+                </div>
 
             </div>
             <div id="content" class="main-section">
@@ -138,6 +142,30 @@
 
 </body>
 <script>
+    function sub() {
+        var page = document.getElementById("btnSumb").value;
+        // var file = new FormData(form);
+        var reqdata = {
+            page,
+            fileId
+        }
+        var json = JSON.stringify(reqdata);
+        $.ajax({
+            url: "/ofd/sign/",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            //重要部分，data的传的是整个表单，不用大括号包裹；不用自定义变量名
+            data: json,
+            success: function (date) {
+
+            },
+            error: function (date) {
+
+            }
+        })
+    }
+
     function sign() {
 
         var leftMenu = document.getElementById("leftMenu");

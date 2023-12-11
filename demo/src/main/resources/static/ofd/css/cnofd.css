@@ -190,17 +190,17 @@ body { margin: 0; }
 
 @font-face {
     font-family: "simsun";
-    src: url(simsun.woff);
+    src: url(./fonts/simsun.woff);
 }
 
 @font-face {
     font-family: "simkai";
-    src: url(simkai.woff);
+    src: url(./fonts/simkai.woff);
 }
 
 @font-face {
     font-family: "simhei";
-    src: url(simhei.woff);
+    src: url(./fonts/simhei.woff);
 }
 
 .gray {
