@@ -18,9 +18,6 @@
 </head>
 
 <body>
-<noscript>
-    <strong>很抱歉，因为没有启用JavaScript，cnofd.js无法正常工作。请启用它以继续。</strong>
-</noscript>
 <div id="app">
     <section class="el-container is-vertical" style="width: 100vw; height: 100vh;">
         <header class="el-header"
@@ -116,15 +113,19 @@
                 <div id="line" onclick="line('1')" title="线条" class="btn-icon">
                     黑屏点我
                 </div>
-                <div id="line" onclick="line('0')" title="线条" class="btn-icon">
-                    恢复
+                <div id="sign" onclick="sign()" class="btn-icon">
+                    签章
                 </div>
             </div>
         </header>
         <main class="el-main" id="main" style="height: auto; background: rgb(242, 242, 242); padding: 0px;">
-            <div id="leftMenu" class="left-section"></div>
+            <div id="leftMenu" class="left-section">
+                <div id="leftSign" style="margin-top: 100px;">测试</div>
+
+            </div>
             <div id="content" class="main-section">
             </div>
+
             <div id="loading"
                  style="position:absolute; z-index:999;  display:none; top:50%; left:50%; transform:translate(-50%,-50%);">
                 <img src="img/loading.gif" alt=""/>
@@ -137,9 +138,27 @@
 
 </body>
 <script>
+    function sign() {
+
+        var leftMenu = document.getElementById("leftMenu");
+
+        if (leftMenu.style.display == "none") {
+            leftMenu.style.display = "block";
+        } else {
+            leftMenu.style.display = "none";
+        }
+        // $.get('http://localhost/ofd/sign/'+fileId);
+
+    }
+
+    // var url = window.location.href;
+    // console.log("url", url)
+    // url = url + "&sign=1";
+    // window.location.href = url;
+
     function line(line) {
         var url = window.location.href;
-        console.log("url",url)
+        console.log("url", url)
         if (line == 1) {
             url = url + "&line=1";
         } else {

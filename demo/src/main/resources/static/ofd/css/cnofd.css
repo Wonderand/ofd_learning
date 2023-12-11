@@ -85,8 +85,9 @@
 
 .left-section {
   position: fixed;
-  width: 0px;
+  width: 200px;
   height: 100%;
+    z-index: 10;
   background:#F5F5F5;
   border: 1px solid #e8e8e8;
   -webkit-box-align: center;
