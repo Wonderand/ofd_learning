@@ -129,6 +129,7 @@
                 <br>
                 <button id="btnSumb" onclick="sub()">签章</button>
                 <button id="seve" onclick="verifySign()">验章</button>
+
             </div>
             <div id="content" class="main-section">
             </div>
@@ -183,25 +184,6 @@
             })
             creatStoage(page)
         });
-
-        var reqdata = {
-            page: page.value,
-            id: fileId
-        }
-        var s = JSON.stringify(reqdata);
-        console.log(reqdata)
-        $.ajax({
-            url: "/ofd/sign/",
-            type: "POST",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            //重要部分，data的传的是整个表单，不用大括号包裹；不用自定义变量名
-            data: s,
-            success: function (date) {
-            },
-            error: function (date) {
-            }
-        })
     }
 
     function sign() {
