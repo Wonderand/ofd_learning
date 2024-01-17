@@ -82,6 +82,7 @@ $("#print").click(function () {
 });
 
 $("#main").scroll(function () {
+    console.log("123")
     scrool();
 });
 
@@ -226,6 +227,7 @@ function loadOfdFile(ofdFile) {
                 that.ofdBase64 = base64String;
             }
         });
+    console.log(that)
     this.getOfdDocument(ofdFile, this.screenWidth, this.pageZoomScale);
 
     setPageInfo();
@@ -280,14 +282,18 @@ function getOfdDocument(file, screenWidth, pageZoomScale) {
     Object(cnofd["ofdParse"])({
         ofd: file,
         success: function success(res) {
+            console.log("res",res)
             that.ofdDoc = res;
             that.pageIndex = 1;
             that.pageCount = res.pageCount;
             if (pageZoomScale == "width") {
                 var divs = Object(cnofd["ofdRender"])(res, screenWidth);
+                // console.log("divs")
                 that.displayOfdDiv(divs);
             } else {
+                debugger
                 var divs = Object(cnofd["ofdRenderByScale"])(res, screenWidth, pageZoomScale);
+                console.log("tests",divs)
                 that.displayOfdDiv(divs);
             }
             $("#loading").hide();
@@ -304,10 +310,11 @@ function displayOfdDiv(divs) {
 
     var _iterator3 = _createForOfIteratorHelper(divs),
         _step3;
-
+    // console.log("_iterator3",_iterator3,_step3 = _iterator3.n())
     try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
             var div = _step3.value;
+            // console.log("div",div)
             contentDiv.appendChild(div);
         }
     } catch (err) {
@@ -379,7 +386,7 @@ function scrool() {
     var scrolled = (contentDiv1 === null || contentDiv1 === void 0 ? void 0 : contentDiv1.getBoundingClientRect() === null || contentDiv1.getBoundingClientRect() === void 0 ? void 0 : contentDiv1.getBoundingClientRect().top) - 60;
     var top = 0;
     var index = 0;
-
+    // console.log("contentDiv",contentDiv)
     for (var i = 0; i < contentDiv.childElementCount; i++) {
         var contentDiv2 = contentDiv.children.item(i);
 
@@ -398,6 +405,7 @@ function scrool() {
 
 function setPageInfo() {
     if (!(this.pageCount == null) && this.pageCount > 0) {
+        console.log(this.pageIndex )
         $("#pageInfo")[0].innerText = this.pageIndex + "/" + this.pageCount;
     }
 }

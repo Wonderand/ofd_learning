@@ -148,19 +148,20 @@
 
     var page = document.getElementById("pageSign");
     page.value = 1;
+
     function sub() {
         if (isDraw === undefined) {
-            alert("点击第"+page.value+"页你要签章的位置完成签章")
+            alert("点击第" + page.value + "页你要签章的位置完成签章")
             isDraw = true
         } else {
             alert("已经签过章了")
-            isDraw= false;
+            isDraw = false;
         }
 
         var pageinfo = document.getElementById("pageInfo");
         var children = $('#content').children();
 
-        console.log(page.value > children.length )
+        console.log(page.value > children.length)
         console.log(page.value < 1)
         if (page.value > children.length || page.value < 1) {
             alert("参数不合法")
@@ -171,15 +172,15 @@
             for (var i = 0; i < children.length; i++) {
                 var clientHeight = children[i].clientHeight;
                 var clientWidth = children[i].clientWidth;
-                var div = document.getElementById("container"+i);
+                var div = document.getElementById("container" + i);
                 console.log(div)
-                if (div!==null){
+                if (div !== null) {
                     continue;
                 }
                 $(children[i]).append('<div style="width: ' + clientWidth + 'px; height: ' + clientHeight + 'px; position: relative; z-index: 10" id="container' + i + '"></div>');
                 console.log(children)
             }
-            $('image').click(()=>{
+            $('image').click(() => {
                 alert("签章生效")
             })
             creatStoage(page)
@@ -201,6 +202,7 @@
     function verifySign() {
         alert("签章生效")
     }
+
     function line(line) {
         var url = window.location.href;
         console.log("url", url)
