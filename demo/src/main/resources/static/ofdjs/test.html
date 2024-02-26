@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAIAAADeJhTwAAACeUlEQVR42u3ay47CMAwFUP7/p5ntbCqB7Os46GSJoLQ5lRw/Xq/Aev9bXb99P6xvf5v4fPWCAQMGjIFN/HZVrlO5n2/BKvBdz/sRKgwYMGBchLEt2FY2q3L9RGCHAQMGDBhnNmvy+zBgwIABYxdGV/KYLlbCgAEDBoxsobDrgSMPXwj+V1ZtYcCAAaOIkR5I+NXPr5wOgQEDBozixiVWV/GuK9h2Ja2RvYIBAwaM5Rjpxv3kdxIHjRVJHwwYMGAswUg3lBIB89SgQuJFeTxNwYABA8ZFGJM3euoeEk2t0ndgwIABYznGLUW3RKBODyq0DUvAgAEDxhKMriDZVe/akOilrxkRhgEDBoxhjK7PJxOlroNA10tT2h8YMGDAuAgj3eRJN5cSgwptjaNK0gcDBgwYSzC6gtVkotR1iEgE9sT1YcCAAWMjRqL5M9kdSze4Es/7uA8wYMCAsRCjK4lLJEGTYIkA/vX3YcCAAWM5xuSwweTGTQ4SdL1AMGDAgHETRlfykg68G5pgaWAYMGDA2IiRLvYlBgPS8McaWTBgwICxHKPrD041mrpelETAb6vgwoABA8aPYaSD/6mDRlcSWsrAYcCAAeMijFNJ0IYgn7i3j34LAwYMGMsxJgcSEgF2tBMXhocBAwaMjRjv8HqFV6KIOZkUP3b6YMCAAWMhRnqD0jd0akCi67ADAwYMGLdidAXqdEKXaHZtKIbCgAEDxq0Ym08Xk8MDx6q2MGDAgAGjJQCmm2Pp4uO6AA4DBgwYSzASg1+nioCJ4uZoAIcBAwaMEEZXoXDywRIFu2OJJAwYMGAsx0gUyNIPdmrAoHIAGQWDAQMGjD6MPyUDIV2nduSlAAAAAElFTkSuQmCC">
+</body>
+<script>
+    async function fn() {
+        const responseA = test(1);
+        // setTimeout(()=>{
+        //     const responseA = test(1);
+        // },2000)
+        const responseB = test(1);
+    }
+    console.log("-----------");
+    function test(data){
+        for (var i = 1000; i>=0;i--) {
+          console.log(data++);
+        }
+    }
+    fn();
+    fn();
+    test(100)
+</script>
+
+</html>
