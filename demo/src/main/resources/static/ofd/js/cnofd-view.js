@@ -82,7 +82,7 @@ $("#print").click(function () {
 });
 
 $("#main").scroll(function () {
-    console.log("123")
+    // console.log("123")
     scrool();
 });
 
@@ -200,12 +200,13 @@ if (scale && (scale == "width" || Number(scale))) {
 }
 
 function getQueryVariable(variable) {
+    console.log("variable",variable)
     var query = window.location.search.substring(1);
     var vars = query.split("&");
 
     for (var i = 0; i < vars.length; i++) {
         var pair = vars[i].split("=");
-
+        console.log("pair",pair)
         if (pair[0] == variable) {
             return pair[1];
         }
@@ -234,12 +235,14 @@ function loadOfdFile(ofdFile) {
 }
 
 function openFile() {
+    console.log("openfile")
     this.isFont = false;
     this.file = null;
     $("#file")[0].click();
 }
 
 function fileChanged() {
+    console.log("filechanged")
     this.file = $("#file")[0].files[0];
     if (this.file == null)
         return;
