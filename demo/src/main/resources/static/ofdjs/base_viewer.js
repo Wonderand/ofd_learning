@@ -141,6 +141,8 @@ function webViewerLoad() {
     config.loadingContainer = img
     config.parserOFDSuccess = function () {
         console.log('解析成功')
+        var doc = document.getElementById("loadingBox");
+        doc.innerHTML = "";
     }
     config.parserOFDFail = function (error) {
         console.log(error)

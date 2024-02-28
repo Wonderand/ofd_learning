@@ -236,6 +236,12 @@
 
     <div id="viewerContainer" tabindex="0">
       <div id="viewer" class="pdfViewer"></div>
+      <!-- 居中显示文件下载 -->
+      <div class="loadingIcon" style="position: absolute;top: 50%;left: 50%; transform: translate(-50%, -50%);">
+        <div class="loadingIconInner">
+          <div class="loadingIconInnerInner" id="loadingBox"></div>
+        </div>
+      </div>
     </div>
 
     <!--#if !MOZCENTRAL-->
